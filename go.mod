@@ -7,6 +7,7 @@ require (
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/mattn/go-sqlite3 v1.14.19
 	github.com/spf13/viper v1.18.2
+	github.com/streadway/amqp v1.1.0
 	github.com/stretchr/testify v1.8.4
 )
 
