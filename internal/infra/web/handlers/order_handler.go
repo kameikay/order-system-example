@@ -49,7 +49,7 @@ func (h *WebOrderHandler) Create(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *WebOrderHandler) List(w http.ResponseWriter, r *http.Request) {
-	listOrder := usecase.NewListOrderUseCase(h.OrderRepository)
+	listOrder := usecase.NewListOrdersUseCase(h.OrderRepository)
 	output, err := listOrder.Execute()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

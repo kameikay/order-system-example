@@ -4,7 +4,7 @@ import (
 	"github.com/kameikay/order-system-example/internal/entity"
 )
 
-type ListOrderUseCase struct {
+type ListOrdersUseCase struct {
 	OrderRepository entity.OrderRepositoryInterface
 }
 
@@ -15,15 +15,15 @@ type ListOrderOutputDTO struct {
 	FinalPrice float64 `json:"final_price"`
 }
 
-func NewListOrderUseCase(
+func NewListOrdersUseCase(
 	orderRepository entity.OrderRepositoryInterface,
-) *ListOrderUseCase {
-	return &ListOrderUseCase{
+) *ListOrdersUseCase {
+	return &ListOrdersUseCase{
 		OrderRepository: orderRepository,
 	}
 }
 
-func (c *ListOrderUseCase) Execute() ([]ListOrderOutputDTO, error) {
+func (c *ListOrdersUseCase) Execute() ([]ListOrderOutputDTO, error) {
 	orders, err := c.OrderRepository.FindAll()
 	if err != nil {
 		return []ListOrderOutputDTO{}, err
