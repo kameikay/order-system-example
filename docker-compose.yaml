@@ -26,3 +26,11 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
+
+  db_migrate:
+    image: migrate/migrate
+    volumes:
+      - ./sql/migrations/:/migrations
+    command: ["-path", "/migrations", "-database", "postgres://localhost:5432/database", "up"]
+    depends_on:
+      - mysql
