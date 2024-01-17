@@ -31,6 +31,6 @@ services:
     image: migrate/migrate
     volumes:
       - ./sql/migrations/:/migrations
-    command: ["-path", "/migrations", "-database", "postgres://localhost:5432/database", "up"]
+    command: ["-path", "/migrations", "-database", "mysql://root:root@tcp(localhost:3306)/orders", "up"]
     depends_on:
       - mysql
