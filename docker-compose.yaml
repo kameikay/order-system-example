@@ -2,6 +2,7 @@ version: '3'
 
 services:
   mysql:
+    platform: linux/x86_64
     image: mysql:5.7
     container_name: mysql
     restart: always
@@ -15,6 +16,7 @@ services:
       - .docker/mysql:/var/lib/mysql
 
   rabbitmq:
+    platform: linux/x86_64
     image: rabbitmq:3-management
     container_name: rabbitmq
     restart: always
